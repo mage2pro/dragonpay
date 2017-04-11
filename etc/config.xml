@@ -1,0 +1,25 @@
+<?xml version='1.0'?>
+<config
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Store:etc/config.xsd'
+>
+    <default>
+		<df_payment>
+			<dragonpay>
+				<countries>PH</countries>
+				<country_restriction>whitelist</country_restriction>
+				<currency>PHP</currency>
+				<description>{store.domain} // {customer.name} // {order.id}</description>
+				<requireBillingAddress>1</requireBillingAddress>
+				<payment_action>authorize_capture</payment_action>
+				<title>Dragonpay</title>
+				<title_backend>Dragonpay</title_backend>
+			</dragonpay>
+		</df_payment>
+        <payment>
+            <dfe_dragonpay>
+				<model>Dfe\Dragonpay\Method</model>
+            </dfe_dragonpay>
+        </payment>
+    </default>
+</config>
