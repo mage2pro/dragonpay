@@ -63,8 +63,8 @@
 					translate='label'
 					type='text'
 				>
-					<label>Test Public Key</label>
-					<comment><![CDATA[<a href='https://mage2.pro/t/2862' target='_blank'>How to get it?</a>]]></comment>
+					<label>Test Merchant ID</label>
+					<comment><![CDATA[<a href='https://mage2.pro/t/4260' target='_blank'>What is this?</a>]]></comment>
 					<depends>
 						<field id='enable'>1</field>
 						<field id='test'>1</field>
@@ -78,8 +78,8 @@
 					translate='label'
 					type='obscure'
 				>
-					<label>Test Private Key</label>
-					<comment><![CDATA[<a href='https://mage2.pro/t/2862' target='_blank'>How to get it?</a>]]></comment>
+					<label>Test Merchant Password</label>
+					<comment><![CDATA[<a href='https://mage2.pro/t/4260' target='_blank'>What is this?</a>]]></comment>
 					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 					<depends>
 						<field id='enable'>1</field>
@@ -94,8 +94,8 @@
 					translate='label'
 					type='text'
 				>
-					<label>Live Public Key</label>
-					<comment><![CDATA[]]></comment>
+					<label>Live Merchant ID</label>
+					<comment><![CDATA[<a href='https://mage2.pro/t/4260' target='_blank'>What is this?</a>]]></comment>
 					<depends>
 						<field id='enable'>1</field>
 						<field id='test'>0</field>
@@ -109,8 +109,8 @@
 					translate='label'
 					type='obscure'
 				>
-					<label>Live Private Key</label>
-					<comment><![CDATA[]]></comment>
+					<label>Live Merchant Password</label>
+					<comment><![CDATA[<a href='https://mage2.pro/t/4260' target='_blank'>What is this?</a>]]></comment>
 					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 					<depends>
 						<field id='enable'>1</field>
