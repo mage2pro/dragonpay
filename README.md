@@ -12,7 +12,7 @@ Just order my [free installation service](https://mage2.pro/t/3585).
 ```
 composer require mage2pro/dragonpay:*
 bin/magento setup:upgrade
-rm -rf pub/static/* && bin/magento setup:static-content:deploy <locale, e.g.: fil_PH>
+rm -rf pub/static/* && bin/magento setup:static-content:deploy -f fil_PH en_US <additional locales, e.g.: zh_CN> 
 rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
 ```
 If you have some problems while executing these commands, then check the [detailed instruction](https://mage2.pro/t/263).
