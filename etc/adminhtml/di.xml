@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
+>
+<!-- 2017-08-12 «Which currencies does Dragonpay support?» https://mage2.pro/t/4261 -->
+	<virtualType name='Dfe\Dragonpay\Validator\Currency' type='Df\Framework\Validator\Currency'>
+		<arguments><argument name='iso3' xsi:type='string'>CAD,PHP,USD</argument></arguments>
+	</virtualType>
+</config>
