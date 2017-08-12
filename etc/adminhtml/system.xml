@@ -130,9 +130,19 @@
 					<depends><field id='enable'>1</field></depends>
 				</field>
 				<field
-					id='description'
+					id='currency'
 					showInDefault='1' showInStore='1' showInWebsite='1'
 					sortOrder='10'
+					translate='label'
+					type='Df\Directory\FormElement\Currency'
+				>
+					<label>Payment Currency</label>
+					<depends><field id='enable'>1</field></depends>
+				</field>
+				<field
+					id='description'
+					showInDefault='1' showInStore='1' showInWebsite='1'
+					sortOrder='11'
 					translate='label'
 					type='textarea'
 				>
@@ -151,7 +161,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='requireBillingAddress'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='11'
+					sortOrder='12'
 					translate='label'
 					type='Df\Framework\Form\Element\Checkbox'
 				>
@@ -163,7 +173,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='min_order_total'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='12'
+					sortOrder='13'
 					translate='label'
 					type='text'
 				>
@@ -175,7 +185,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='max_order_total'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='13'
+					sortOrder='14'
 					translate='label'
 					type='text'
 				>
@@ -187,7 +197,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='country_restriction'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='14'
+					sortOrder='15'
 					translate='label'
 					type='select'
 				>
@@ -198,7 +208,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='countries'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='15'
+					sortOrder='16'
 					translate='label'
 					type='Df\Framework\Form\Element\Multiselect'
 				>
