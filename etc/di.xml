@@ -3,5 +3,6 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
 >
+	<virtualType name='Dfe\Dragonpay\Controller\CustomerReturn\Index' type='Df\Payment\CustomerReturn'/>
 	<virtualType name='Dfe\Dragonpay\Controller\Index\Index' type='Df\Payment\W\Action'/>
 </config>
