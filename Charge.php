@@ -30,6 +30,8 @@ final class Charge extends \Df\PaypalClone\Charge {
 		,'description' => mb_substr($this->description(), 0, 128)
 		// 2017-08-12 «Email address of customer. Varchar(40).»
 		,'email' => $this->customerEmail()
+		// 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
+		,'merchantid' => $this->s()->merchantID()
 	];}
 
 	/**

@@ -30,5 +30,7 @@ abstract class Signer extends \Df\PaypalClone\Signer {
 	 * @used-by \Df\PaypalClone\Signer::_sign()
 	 * @return string
 	 */
-	final protected function sign() {return sha1(implode(':', dfa_flatten($this->values())));}
+	final protected function sign() {return sha1(implode(':', array_merge($this->values(), [
+		$this->s()->privateKey()
+	])));}
 }
