@@ -108,14 +108,36 @@
 					<validate>required-entry</validate>
 				</field>
 				<field
-					id='description'
+					id='webhook'
 					showInDefault='1' showInStore='1' showInWebsite='1'
 					sortOrder='8'
+					translate='label'
+					type='Df\Framework\Form\Element\Webhook'
+				>
+					<label>Postback URL</label>
+					<comment><![CDATA[Report the «<b>Postback URL</b>» and «<b>Customer Return URL</b>» values to the Dragonpay support: <a href='mailto:sales@dragonpay.ph?subject=My «Postback URL» and «Customer Return URL»'>sales@dragonpay.ph</a> and then just wait for the support response because the URLs should be enabled manually, Dragonpay does not provide an automatic way to enable them.]]></comment>
+					<depends><field id='enable'>1</field></depends>
+				</field>
+				<field
+					id='urlCustomerReturn'
+					showInDefault='1' showInStore='1' showInWebsite='1'
+					sortOrder='9'
+					translate='label'
+					type='Df\Payment\FE\CustomerReturn'
+				>
+					<label>Customer Return URL</label>
+					<comment><![CDATA[Report the «<b>Postback URL</b>» and «<b>Customer Return URL</b>» values to the Dragonpay support: <a href='mailto:sales@dragonpay.ph?subject=Please set my «Postback URL» and «Customer Return URL»'>sales@dragonpay.ph</a> and then just wait for the support response because the URLs should be enabled manually, Dragonpay does not provide an automatic way to enable them.]]></comment>
+					<depends><field id='enable'>1</field></depends>
+				</field>
+				<field
+					id='description'
+					showInDefault='1' showInStore='1' showInWebsite='1'
+					sortOrder='10'
 					translate='label'
 					type='textarea'
 				>
 					<comment><![CDATA[It will be displayed to you in the Dragonpay merchant interface alongside the payment.
-<br/>Up to 100 characters.
+<br/>Up to 128 characters.
 <br/>You can use <a href='https://mage2.pro/t/1834' target='_blank'>variables</a> in the description.]]></comment>
 					<depends><field id='enable'>1</field></depends>
 					<label>Description</label>
@@ -129,7 +151,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='requireBillingAddress'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='16'
+					sortOrder='11'
 					translate='label'
 					type='Df\Framework\Form\Element\Checkbox'
 				>
@@ -141,7 +163,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='min_order_total'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='19'
+					sortOrder='12'
 					translate='label'
 					type='text'
 				>
@@ -153,7 +175,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='max_order_total'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='20'
+					sortOrder='13'
 					translate='label'
 					type='text'
 				>
@@ -165,7 +187,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='country_restriction'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='21'
+					sortOrder='14'
 					translate='label'
 					type='select'
 				>
@@ -176,7 +198,7 @@ As I understand, the value is required because it is used in the request signatu
 				<field
 					id='countries'
 					showInDefault='1' showInStore='1' showInWebsite='1'
-					sortOrder='22'
+					sortOrder='15'
 					translate='label'
 					type='Df\Framework\Form\Element\Multiselect'
 				>
