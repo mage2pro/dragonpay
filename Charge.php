@@ -21,7 +21,12 @@ final class Charge extends \Df\PaypalClone\Charge {
 		'amount' => $this->amountF()
 		// 2017-08-12 «The currency of the amount. Char(3).»
 		,'ccy' => $this->currencyC()
-		// 2017-08-12 «A brief description of what the payment is for. Varchar(128).»
+		/**
+		 * 2017-08-12
+		 * Note 1: «A brief description of what the payment is for. Varchar(128).»
+		 * Note 2: As I understand, the value is required because it is used in the request signature generation:
+		 * @see \Dfe\Dragonpay\Signer\Request::values()
+		 */
 		,'description' => mb_substr($this->description(), 0, 128)
 		// 2017-08-12 «Email address of customer. Varchar(40).»
 		,'email' => $this->customerEmail()
