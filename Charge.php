@@ -11,6 +11,26 @@ namespace Dfe\Dragonpay;
 final class Charge extends \Df\PaypalClone\Charge {
 	/**
 	 * 2017-04-11
+	 * 2017-08-12 «A unique id identifying this specific transaction from the merchant side. Varchar(40).»
+	 * @override
+	 * @see \Df\PaypalClone\Charge::k_RequestId()
+	 * @used-by \Df\PaypalClone\Charge::p()
+	 * @return string
+	 */
+	protected function k_RequestId() {return 'txnid';}
+
+	/**
+	 * 2017-04-11
+	 * 2017-08-12 «A sha1 checksum digest of all the parameters along with the secret key. Char(40).»
+	 * @override
+	 * @see \Df\PaypalClone\Charge::k_Signature()
+	 * @used-by \Df\PaypalClone\Charge::p()
+	 * @return string
+	 */
+	protected function k_Signature() {return 'digest';}
+
+	/**
+	 * 2017-04-11
 	 * @override
 	 * @see \Df\PaypalClone\Charge::pCharge()
 	 * @used-by \Df\PaypalClone\Charge::p()
@@ -33,24 +53,4 @@ final class Charge extends \Df\PaypalClone\Charge {
 		// 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
 		,'merchantid' => $this->s()->merchantID()
 	];}
-
-	/**
-	 * 2017-04-11
-	 * 2017-08-12 «A unique id identifying this specific transaction from the merchant side. Varchar(40).»
-	 * @override
-	 * @see \Df\PaypalClone\Charge::k_RequestId()
-	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
-	 */
-	protected function k_RequestId() {return 'txnid';}
-
-	/**
-	 * 2017-04-11
-	 * 2017-08-12 «A sha1 checksum digest of all the parameters along with the secret key. Char(40).»
-	 * @override
-	 * @see \Df\PaypalClone\Charge::k_Signature()
-	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
-	 */
-	protected function k_Signature() {return 'digest';}
 }
