@@ -8,6 +8,15 @@
 			<dragonpay>
 				<currency>PHP</currency>
 				<description>{store.domain} // {customer.name} // {order.id}</description>
+<!-- 2017-08-13
+*) Param name: `txnid`
+*) Param type and limitations: «Varchar(40)»
+*) Reference: Chapter 5.2.1.1 «Request Parameters» (page 9) of the PDF documentation: https://mage2.pro/t/4259
+@see \Dfe\Dragonpay\Charge::k_RequestId(): https://github.com/mage2pro/dragonpay/blob/0.1.4/Charge.php#L12-L20
+-->
+				<identification_rules>
+					<max_length>40</max_length>
+				</identification_rules>
 				<requireBillingAddress>1</requireBillingAddress>
 				<payment_action>authorize_capture</payment_action>
 				<title>Dragonpay</title>
