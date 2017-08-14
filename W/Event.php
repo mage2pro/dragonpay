@@ -55,6 +55,12 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * `S`: Success
 	 * `U`: Unknown
 	 * `V`: Void
+	 * Note 3:
+	 * «In cases wherein the transaction status returned is PENDING,
+	 * the merchant may receive an asynchronous call to the postback URL in the future once the funding is completed.
+	 * The format will just be similar to the HTTP GET callback described above. <...>
+	 * The merchant should take care in checking the status
+	 * and should only ship goods or render service when status value has become SUCCESS.»
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_status()
 	 * @used-by \Df\PaypalClone\W\Event::status()
