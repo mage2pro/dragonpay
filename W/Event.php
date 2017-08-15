@@ -11,6 +11,7 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * 2017-08-14
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::isSuccessful()
+	 * @used-by \Df\PaypalClone\W\Event::ttCurrent()
 	 * @used-by \Df\PaypalClone\W\Handler::_handle()
 	 * @return bool
 	 */
