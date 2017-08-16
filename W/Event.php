@@ -1,5 +1,7 @@
 <?php
 namespace Dfe\Dragonpay\W;
+use Df\Payment\Source\AC;
+use Magento\Sales\Model\Order\Payment\Transaction as T;
 /**
  * 2017-08-14
  * The response parameters are described in the part 5.2.1.2 «Response Parameters» (page 11)
@@ -12,10 +14,23 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::isSuccessful()
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
-	 * @used-by \Df\PaypalClone\W\Event::ttCurrent()
 	 * @return bool
 	 */
 	function isSuccessful() {return 'F' !== $this->status();}
+
+	/**
+	 * 2017-08-16
+	 * @override The type of the current transaction.
+	 * @see \Df\PaypalClone\W\Event::ttCurrent()
+	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
+	 * @used-by \Df\StripeClone\W\Nav::id()
+	 * @used-by \Dfe\Dragonpay\W\Handler::strategyC()
+	 */
+	function ttCurrent() {return dfc($this, function() {$s = $this->status(); /** @var string $s */ return
+		'S' === $s ? AC::C : (in_array($s, ['K', 'R']) ? T::TYPE_REFUND : (
+			'A' === $s ? AC::A : ('V' === $s ? T::TYPE_VOID : T::TYPE_PAYMENT)
+		))
+	;});}
 
 	/**
 	 * 2017-08-14 «A common reference number identifying this specific transaction from the PS side»

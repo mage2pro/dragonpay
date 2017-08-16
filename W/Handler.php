@@ -1,6 +1,10 @@
 <?php
 namespace Dfe\Dragonpay\W;
 use Df\Framework\Controller\Result\Text;
+use Df\Payment\Source\AC;
+use Df\Payment\W\Strategy\ConfirmPending;
+use Df\Payment\W\Strategy\Refund;
+use Magento\Sales\Model\Order\Payment\Transaction as T;
 // 2017-08-14
 final class Handler extends \Df\PaypalClone\W\Handler {
 	/**
@@ -14,4 +18,14 @@ final class Handler extends \Df\PaypalClone\W\Handler {
 	 * @return Text
 	 */
 	protected function result() {return Text::i('result=OK');}
+
+	/**
+	 * 2017-08-16
+	 * @override
+	 * @see \Df\Payment\W\Handler::strategyC()
+	 * @used-by \Df\Payment\W\Handler::handle()
+	 */
+	protected function strategyC() {$t = $this->e()->ttCurrent(); /** @var string $t */ return
+		T::TYPE_REFUND === $t ? Refund::class : (T::TYPE_VOID === $t ? null : ConfirmPending::class)
+	;}
 }
