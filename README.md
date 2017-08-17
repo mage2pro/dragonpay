@@ -1,7 +1,7 @@
 The extension integrates your Magento 2 store with the **[Dragonpay](https://www.dragonpay.ph)** payment service (Philippines).
 
 ## Settings
-![](https://mage2.pro/uploads/default/original/2X/9/92075d3e0a281d08cf69b6380a3553c72d110497.png)
+![](https://mage2.pro/uploads/default/original/2X/9/964e3d28d8302336857ff1db81d0fc3f82593fc3.png)
 
 ## How to buy
 You can buy it with PayPal [here](https://mage2.pro/t/3656).   
