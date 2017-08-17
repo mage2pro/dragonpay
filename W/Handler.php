@@ -1,36 +1,19 @@
 <?php
 namespace Dfe\Dragonpay\W;
 use Df\Framework\Controller\Result\Text;
-use Df\Payment\W\Strategy\ConfirmPending;
-use Df\Payment\W\Strategy\Refund;
-use Magento\Sales\Model\Order\Payment\Transaction as T;
-// 2017-08-14
-final class Handler extends \Df\PaypalClone\W\Handler implements \Df\Payment\W\IRefund {
-	/**
-	 * 2017-08-16 В валюте заказа (платежа), в формате платёжной системы (копейках).
-	 * @todo It is not implemented yet.
-	 * @override
-	 * @see \Df\Payment\W\IRefund::amount()
-	 * @used-by \Df\Payment\W\Strategy\Refund::_handle()
-	 * @return int
-	 */
-	function amount() {return null;}
-
-	/**
-	 * 2017-08-16
-	 * @todo It is not implemented yet.
-	 * Метод должен вернуть идентификатор операции (не платежа!) в платёжной системе.
-	 * Он нужен нам для избежания обработки оповещений о возвратах, инициированных нами же
-	 * из административной части Magento: @see \Df\StripeClone\Method::_refund()
-	 * Это должен быть тот же самый идентификатор,
-	 * который возвращает @see \Dfe\Stripe\Facade\Refund::transId()
-	 * @override
-	 * @see \Df\Payment\W\IRefund::eTransId()
-	 * @used-by \Df\Payment\W\Strategy\Refund::_handle()
-	 * @return string
-	 */
-	function eTransId() {return null;}
-
+/**
+ * 2017-08-14
+ * 2017-08-17
+ * Currently, Dragonpay does not support the «Authorized», «Chargeback», «Refund» and «Void» responses:
+ * https://mage2.pro/t/4295
+ * https://mage2.pro/t/4297
+ * So I have removed support for these responses to make my code simplier.
+ * In future, if Dragonpay will support these responses,
+ * please the 0.2.1 version of my extension: https://github.com/mage2pro/dragonpay/tree/0.2.1
+ * It is the latest version with these reasponses support.
+ * @override The type of the current transaction.
+ */
+final class Handler extends \Df\PaypalClone\W\Handler {
 	/**
 	 * 2017-08-14
 	 * «The postback URL handler should return with a simple `content-type:text/plain`
@@ -42,14 +25,4 @@ final class Handler extends \Df\PaypalClone\W\Handler implements \Df\Payment\W\I
 	 * @return Text
 	 */
 	protected function result() {return Text::i('result=OK');}
-
-	/**
-	 * 2017-08-16
-	 * @override
-	 * @see \Df\Payment\W\Handler::strategyC()
-	 * @used-by \Df\Payment\W\Handler::handle()
-	 */
-	protected function strategyC() {$t = $this->e()->ttCurrent(); /** @var string $t */ return
-		T::TYPE_REFUND === $t ? Refund::class : (T::TYPE_VOID === $t ? null : ConfirmPending::class)
-	;}
 }

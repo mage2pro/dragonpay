@@ -20,17 +20,19 @@ final class Event extends \Df\PaypalClone\W\Event {
 
 	/**
 	 * 2017-08-16
+	 * 2017-08-17
+	 * Currently, Dragonpay does not support the «Authorized», «Chargeback», «Refund» and «Void» responses:
+	 * https://mage2.pro/t/4295
+	 * https://mage2.pro/t/4297
+	 * So I have removed support for these responses to make my code simplier.
+	 * In future, if Dragonpay will support these responses,
+	 * please the 0.2.1 version of my extension: https://github.com/mage2pro/dragonpay/tree/0.2.1
+	 * It is the latest version with these reasponses support.
 	 * @override The type of the current transaction.
 	 * @see \Df\PaypalClone\W\Event::ttCurrent()
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
-	 * @used-by \Df\StripeClone\W\Nav::id()
-	 * @used-by \Dfe\Dragonpay\W\Handler::strategyC()
 	 */
-	function ttCurrent() {return dfc($this, function() {$s = $this->status(); /** @var string $s */ return
-		'S' === $s ? AC::C : (in_array($s, ['K', 'R']) ? T::TYPE_REFUND : (
-			'A' === $s ? AC::A : ('V' === $s ? T::TYPE_VOID : T::TYPE_PAYMENT)
-		))
-	;});}
+	function ttCurrent() {return 'S' === $this->status() ? self::T_CAPTURE : self::T_INFO;}
 
 	/**
 	 * 2017-08-14 «A common reference number identifying this specific transaction from the PS side»
@@ -77,6 +79,15 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * The format will just be similar to the HTTP GET callback described above. <...>
 	 * The merchant should take care in checking the status
 	 * and should only ship goods or render service when status value has become SUCCESS.»
+	 *
+	 * 2017-08-17
+	 * Currently, Dragonpay does not support the «Authorized», «Chargeback», «Refund» and «Void» responses:
+	 * https://mage2.pro/t/4295
+	 * https://mage2.pro/t/4297
+	 * So I have removed support for these responses to make my code simplier.
+	 * In future, if Dragonpay will support these responses,
+	 * please the 0.2.1 version of my extension: https://github.com/mage2pro/dragonpay/tree/0.2.1
+	 * It is the latest version with these reasponses support.
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_status()
 	 * @used-by \Df\PaypalClone\W\Event::status()
