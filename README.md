@@ -4,8 +4,7 @@ The extension integrates your Magento 2 store with the **[Dragonpay](https://www
 ![](https://mage2.pro/uploads/default/original/2X/9/92075d3e0a281d08cf69b6380a3553c72d110497.png)
 
 ## How to buy
-The extension is not released yet, so there is no way to buy it just now.  
-The extension will be released when I will want so.   
+You can buy it with PayPal [here](https://mage2.pro/t/3656).   
 
 ## How to install
 ### 1. Free installation service
