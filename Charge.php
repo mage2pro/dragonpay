@@ -10,6 +10,16 @@ namespace Dfe\Dragonpay;
  */
 final class Charge extends \Df\PaypalClone\Charge {
 	/**
+	 * 2017-08-19
+	 * 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
+	 * @override
+	 * @see \Df\PaypalClone\Charge::k_MerchantId()
+	 * @used-by \Df\PaypalClone\Charge::p()
+	 * @return string
+	 */
+	protected function k_MerchantId() {return 'merchantid';}
+
+	/**
 	 * 2017-04-11
 	 * 2017-08-12 «A unique id identifying this specific transaction from the merchant side. Varchar(40).»
 	 * @override
@@ -50,7 +60,5 @@ final class Charge extends \Df\PaypalClone\Charge {
 		,'description' => mb_substr($this->description(), 0, 128)
 		// 2017-08-12 «Email address of customer. Varchar(40).»
 		,'email' => $this->customerEmail()
-		// 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
-		,'merchantid' => $this->s()->merchantID()
 	];}
 }
