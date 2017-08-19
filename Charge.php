@@ -21,6 +21,16 @@ final class Charge extends \Df\PaypalClone\Charge {
 
 	/**
 	 * 2017-08-19
+	 * 2017-08-12 «The currency of the amount. Char(3).»
+	 * @override
+	 * @see \Df\PaypalClone\Charge::k_Currency()
+	 * @used-by \Df\PaypalClone\Charge::p()
+	 * @return string
+	 */
+	protected function k_Currency() {return 'ccy';}
+
+	/**
+	 * 2017-08-19
 	 * 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_MerchantId()
@@ -57,15 +67,13 @@ final class Charge extends \Df\PaypalClone\Charge {
 	 * @return array(string => mixed)
 	 */
 	protected function pCharge() {return [
-		// 2017-08-12 «The currency of the amount. Char(3).»
-		'ccy' => $this->currencyC()
 		/**
 		 * 2017-08-12
 		 * Note 1: «A brief description of what the payment is for. Varchar(128).»
 		 * Note 2: As I understand, the value is required because it is used in the request signature generation:
 		 * @see \Dfe\Dragonpay\Signer\Request::values()
 		 */
-		,'description' => mb_substr($this->description(), 0, 128)
+		'description' => mb_substr($this->description(), 0, 128)
 		// 2017-08-12 «Email address of customer. Varchar(40).»
 		,'email' => $this->customerEmail()
 	];}
