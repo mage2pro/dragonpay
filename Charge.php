@@ -31,6 +31,16 @@ final class Charge extends \Df\PaypalClone\Charge {
 
 	/**
 	 * 2017-08-19
+	 * 2017-08-12 «Email address of customer. Varchar(40).»
+	 * @override
+	 * @see \Df\PaypalClone\Charge::k_Email()
+	 * @used-by \Df\PaypalClone\Charge::p()
+	 * @return string
+	 */
+	protected function k_Email() {return 'email';}
+
+	/**
+	 * 2017-08-19
 	 * 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_MerchantId()
@@ -74,7 +84,5 @@ final class Charge extends \Df\PaypalClone\Charge {
 		 * @see \Dfe\Dragonpay\Signer\Request::values()
 		 */
 		'description' => mb_substr($this->description(), 0, 128)
-		// 2017-08-12 «Email address of customer. Varchar(40).»
-		,'email' => $this->customerEmail()
 	];}
 }
