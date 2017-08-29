@@ -1,6 +1,5 @@
 <?php
 namespace Dfe\Dragonpay\W;
-use Df\Payment\Source\AC;
 use Magento\Sales\Model\Order\Payment\Transaction as T;
 /**
  * 2017-08-14
