@@ -18,7 +18,7 @@ final class Event extends \Df\PaypalClone\W\Event {
 	function isSuccessful() {return 'F' !== $this->status();}
 
 	/**
-	 * 2017-08-16
+	 * 2017-08-16 The type of the current transaction.
 	 * 2017-08-17
 	 * Currently, Dragonpay does not support the «Authorized», «Chargeback», «Refund» and «Void» responses:
 	 * https://mage2.pro/t/4295
@@ -27,7 +27,7 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * In future, if Dragonpay will support these responses,
 	 * please the 0.2.1 version of my extension: https://github.com/mage2pro/dragonpay/tree/0.2.1
 	 * It is the latest version with these reasponses support.
-	 * @override The type of the current transaction.
+	 * @override
 	 * @see \Df\PaypalClone\W\Event::ttCurrent()
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
 	 */

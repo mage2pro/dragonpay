@@ -11,7 +11,6 @@ use Df\Framework\Controller\Result\Text;
  * In future, if Dragonpay will support these responses,
  * please the 0.2.1 version of my extension: https://github.com/mage2pro/dragonpay/tree/0.2.1
  * It is the latest version with these reasponses support.
- * @override The type of the current transaction.
  */
 final class Handler extends \Df\PaypalClone\W\Handler {
 	/**
