@@ -30,6 +30,7 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::ttCurrent()
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
+	 * @used-by \Df\PaypalClone\W\Nav::id()
 	 */
 	function ttCurrent() {return 'S' === $this->status() ? self::T_CAPTURE : self::T_INFO;}
 
