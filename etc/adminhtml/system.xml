@@ -150,6 +150,7 @@
 					<depends><field id='enable'>1</field></depends>
 				</field>
 				<field
+					dfValues='CAD,PHP,USD'
 					id='currency'
 					showInDefault='1' showInStore='1' showInWebsite='1'
 					sortOrder='11'
