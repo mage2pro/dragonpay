@@ -136,7 +136,7 @@
 					translate='label'
 				>
 					<label>Payment ID prefix</label>
-					<comment><![CDATA[<p class='df-note'>This option allows you to define a prefix for the payment identificators (the values of the <a href='https://mage2.pro/t/4259' target='_blank' title='«Dragonpay Online Payment - Merchant Payment Switch API» (Version 1.00, Jul 1, 2016)'><code>txnid</code></a> API parameter).</p>
+					<comment><![CDATA[<p class='df-note'>This option allows you to define a prefix for the payment identificators (values of the <a href='https://mage2.pro/t/4259' target='_blank' title='«Dragonpay Online Payment - Merchant Payment Switch API» (Version 1.00, Jul 1, 2016)'><code>txnid</code></a> API parameter).</p>
 <p class='df-note'>In the most cases you do not need any prefix and can leave this option empty.</p>
 <p class='df-note'>But there are some (rare) cases</a> when your Dragonpay payment identifiers can potentially overlap with the previous ones:</p>
 <ul class='df-note'>
