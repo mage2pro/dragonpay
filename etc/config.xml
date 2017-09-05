@@ -8,6 +8,11 @@
 			<dragonpay>
 				<currency>PHP</currency>
 				<description>{store.domain} // {customer.name} // {order.id}</description>
+				<descriptionMaxLength>
+					<title>[Dragonpay] The maximum length of a payment description (the «description» parameter) is 128 characters.</title>
+					<url>https://mage2.pro/t/4457</url>
+					<value>128</value>
+				</descriptionMaxLength>
 <!-- 2017-08-13
 *) Param name: `txnid`
 *) Param type and limitations: «Varchar(40)»
