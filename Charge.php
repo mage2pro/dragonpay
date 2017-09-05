@@ -79,6 +79,6 @@ final class Charge extends \Df\PaypalClone\Charge {
 		 * `[Dragonpay] The maximum length of a payment description (the «description» parameter)
 		 * is 128 characters`: https://mage2.pro/t/4457
 		 */
-		'description' => $this->description(128)
+		'description' => $this->description()
 	];}
 }
