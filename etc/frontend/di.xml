@@ -10,7 +10,4 @@
 			</argument>
 		</arguments>
 	</type>
-	<virtualType name='Dfe\Dragonpay\ConfigProvider' type='Df\Payment\ConfigProvider'>
-		<arguments><argument name='module' xsi:type='string'>Dfe_Dragonpay</argument></arguments>
-	</virtualType>
 </config>
