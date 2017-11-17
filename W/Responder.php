@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Dragonpay\W;
-use Df\Framework\W\Response\Text;
+use Df\Framework\W\Result\Text;
 /**
  * 2017-08-17
  * Currently, Dragonpay does not support the «Authorized», «Chargeback», «Refund» and «Void» responses:
