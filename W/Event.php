@@ -102,7 +102,7 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * If status is PENDING, the message would be a reference number to complete the funding.»
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_statusT()
-	 * @used-by \Df\PaypalClone\W\Event::logTitleSuffix()
+	 * @used-by \Df\PaypalClone\W\Event::statusT()
 	 * @return string|null
 	 */
 	protected function k_statusT() {return 'message';}
