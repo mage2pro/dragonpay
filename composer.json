@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/dragonpay"
-	,"version": "1.1.6"
+	,"version": "1.1.7"
 	,"description": "Dragonpay integration with Magento 2"
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/c/extensions/dragonpay"

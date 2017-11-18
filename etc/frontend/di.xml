@@ -13,4 +13,6 @@
 	<virtualType name='Dfe\Dragonpay\ConfigProvider' type='Df\Payment\ConfigProvider'>
 		<arguments><argument name='module' xsi:type='string'>Dfe_Dragonpay</argument></arguments>
 	</virtualType>
+	<virtualType name='Dfe\Dragonpay\Controller\CustomerReturn\Index' type='Df\Payment\CustomerReturn'/>
+	<virtualType name='Dfe\Dragonpay\Controller\Index\Index' type='Df\Payment\W\Action'/>
 </config>
