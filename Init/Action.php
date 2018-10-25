@@ -4,6 +4,16 @@ namespace Dfe\Dragonpay\Init;
 /** @method \Dfe\Dragonpay\Method m() */
 final class Action extends \Df\PaypalClone\Init\Action {
 	/**
+	 * 2018-10-25
+	 * @override
+	 * @see \Df\Payment\Init\Action::forceGet
+	 * @used-by \Df\Payment\Init\Action::action()
+	 * @see \Dfe\Qiwi\Init\Action::redirectMethod()
+	 * @return bool
+	 */
+	protected function forceGet() {return true;}
+
+	/**
 	 * 2017-04-11
 	 * 2017-08-11
 	 * Note 1. These URL are specified on the page 8 of the API PDF documentation: https://mage2.pro/t/4259
