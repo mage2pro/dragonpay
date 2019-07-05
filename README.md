@@ -14,24 +14,33 @@ Just order my [free installation service](https://mage2.pro/t/3585).
 ### 2. Self-installation
 ```
 bin/magento maintenance:enable
+rm -rf composer.lock
 composer clear-cache
 composer require mage2pro/dragonpay:*
 bin/magento setup:upgrade
-rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
-rm -rf pub/static/* && bin/magento setup:static-content:deploy en_US <additional locales, e.g.: fil_PH>
+rm -rf var/di var/generation generated/code
+bin/magento setup:di:compile
+rm -rf pub/static/*
+bin/magento setup:static-content:deploy -f en_US <additional locales, e.g.: fil_PH>
 bin/magento maintenance:disable
+bin/magento cache:enable
 ```
 If you have problems with these commands, please check the [detailed instruction](https://mage2.pro/t/263).
 
 ### How to update
 ```
 bin/magento maintenance:enable
+composer remove mage2pro/dragonpay
+rm -rf composer.lock
 composer clear-cache
-composer update mage2pro/dragonpay
+composer require mage2pro/dragonpay:*
 bin/magento setup:upgrade
-rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
-rm -rf pub/static/* && bin/magento setup:static-content:deploy en_US <additional locales, e.g.: fil_PH>
+rm -rf var/di var/generation generated/code
+bin/magento setup:di:compile
+rm -rf pub/static/*
+bin/magento setup:static-content:deploy -f en_US <additional locales, e.g.: fil_PH>
 bin/magento maintenance:disable
+bin/magento cache:enable
 ```
 
 ## Licensing
