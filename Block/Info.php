@@ -8,6 +8,7 @@ class Info extends \Df\Payment\Block\Info {
 	 * 2017-04-11
 	 * @override
 	 * @see \Df\Payment\Block\Info::prepare()
+	 * @used-by prepareUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
 	final protected function prepare() {
@@ -27,5 +28,16 @@ class Info extends \Df\Payment\Block\Info {
 		if ($e = $this->tm()->responseL()) { /** @var E $e */
 			$this->siEx('refno', $e->r('refno'));
 		}
+	}
+
+	/**
+	 * 2019-07-05
+	 * @override
+	 * @see \Df\Payment\Block\Info::prepare()
+	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
+	 */
+	final protected function prepareUnconfirmed() {
+		$this->prepare();
+		parent::prepareUnconfirmed();
 	}
 }
