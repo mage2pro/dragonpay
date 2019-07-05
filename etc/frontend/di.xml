@@ -14,5 +14,7 @@
 		<arguments><argument name='module' xsi:type='string'>Dfe_Dragonpay</argument></arguments>
 	</virtualType>
 	<virtualType name='Dfe\Dragonpay\Controller\CustomerReturn\Index' type='Df\Payment\CustomerReturn'/>
-	<virtualType name='Dfe\Dragonpay\Controller\Index\Index' type='Df\Payment\W\Action'/>
+	<virtualType name='Dfe\Dragonpay\Controller\Index\Index' type='Df\Payment\W\Action'>
+		<arguments><argument name='storeIntermediateResponses' xsi:type='boolean'>true</argument></arguments>
+	</virtualType>
 </config>

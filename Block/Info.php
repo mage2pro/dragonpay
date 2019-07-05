@@ -24,7 +24,7 @@ class Info extends \Df\Payment\Block\Info {
 		 * @see \Dfe\IPay88\Block\Info::prepare()
 		 * https://github.com/mage2pro/ipay88/blob/1.6.1/Block/Info.php#L17-L24
 		 */
-		if ($e = $this->e()) { /** @var E $e */
+		if ($e = $this->tm()->responseL()) { /** @var E $e */
 			$this->siEx('refno', $e->r('refno'));
 		}
 	}
