@@ -33,7 +33,7 @@ class Info extends \Df\Payment\Block\Info {
 	/**
 	 * 2019-07-05
 	 * @override
-	 * @see \Df\Payment\Block\Info::prepare()
+	 * @see \Df\Payment\Block\Info::prepareUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
 	final protected function prepareUnconfirmed() {
