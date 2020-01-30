@@ -9,5 +9,5 @@ final class Response extends \Dfe\Dragonpay\Signer {
 	 * @used-by \Dfe\Dragonpay\Signer::sign()
 	 * @return string[]
 	 */
-	protected function values() {return dfa_select_ordered($this->v(), ['txnid', 'refno', 'status', 'message']);}
+	protected function values() {return dfa($this->v(), ['txnid', 'refno', 'status', 'message']);}
 }
