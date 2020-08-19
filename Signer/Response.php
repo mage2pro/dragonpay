@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Dragonpay\Signer;
-// 2017-04-11
+# 2017-04-11
 final class Response extends \Dfe\Dragonpay\Signer {
 	/**
 	 * 2017-04-11

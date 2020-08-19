@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Dragonpay\Init;
-// 2017-04-11
+# 2017-04-11
 /** @method \Dfe\Dragonpay\Method m() */
 final class Action extends \Df\PaypalClone\Init\Action {
 	/**

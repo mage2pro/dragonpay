@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Dragonpay;
-// 2017-04-11
+# 2017-04-11
 final class Method extends \Df\PaypalClone\Method {
 	/**
 	 * 2017-08-14

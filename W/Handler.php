@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Dragonpay\W;
-// 2019-05-07
+# 2019-05-07
 final class Handler extends \Df\Payment\W\Handler {
 	/**
 	 * 2019-05-07
