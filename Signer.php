@@ -16,7 +16,7 @@ namespace Dfe\Dragonpay;
 abstract class Signer extends \Df\PaypalClone\Signer {
 	/**
 	 * 2017-04-11
-	 * @used-by sign()
+	 * @used-by self::sign()
 	 * @see \Dfe\Dragonpay\Signer\Request::values()
 	 * @see \Dfe\Dragonpay\Signer\Response::values()
 	 * @return string[]
