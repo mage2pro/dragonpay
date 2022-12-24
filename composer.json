@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/dragonpay"
-	,"version": "1.3.4"
+	,"version": "1.4.0"
 	,"description": "Dragonpay integration with Magento 2"
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/c/extensions/dragonpay"
@@ -11,7 +11,7 @@
 		"homepage": "https://www.upwork.com/fl/mage2pro",
 		"role": "Developer"
 	}]
-	,"require": {"mage2pro/core": ">=5.8.0"}
+	,"require": {"mage2pro/core": ">=9.0.2"}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\Dragonpay\\": ""}}
 	,"keywords": [
 		"API"
