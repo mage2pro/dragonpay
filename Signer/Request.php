@@ -9,7 +9,5 @@ final class Request extends \Dfe\Dragonpay\Signer {
 	 * @used-by \Dfe\Dragonpay\Signer::sign()
 	 * @return string[]
 	 */
-	protected function values() {return dfa($this->v(), [
-		'merchantid', 'txnid', 'amount', 'ccy', 'description', 'email'
-	]);}
+	protected function values():array {return $this->v(['merchantid', 'txnid', 'amount', 'ccy', 'description', 'email']);}
 }

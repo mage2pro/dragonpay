@@ -17,7 +17,6 @@ final class ConfirmPending extends \Df\Payment\W\Strategy\ConfirmPending {
 	 * @override
 	 * @see \Df\Payment\W\Strategy\ConfirmPending::storeIntermediateResponses()
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
-	 * @return bool
 	 */
-	protected function storeIntermediateResponses() {return true;}
+	protected function storeIntermediateResponses():bool {return true;}
 }

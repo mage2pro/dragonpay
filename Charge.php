@@ -13,54 +13,48 @@ final class Charge extends \Df\PaypalClone\Charge {
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_Amount()
 	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
 	 */
-	protected function k_Amount() {return 'amount';}
+	protected function k_Amount():string {return 'amount';}
 
 	/**
 	 * 2017-08-12 «The currency of the amount. Char(3).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_Currency()
 	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
 	 */
-	protected function k_Currency() {return 'ccy';}
+	protected function k_Currency():string {return 'ccy';}
 
 	/**
 	 * 2017-08-12 «Email address of customer. Varchar(40).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_Email()
 	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
 	 */
-	protected function k_Email() {return 'email';}
+	protected function k_Email():string {return 'email';}
 
 	/**
 	 * 2017-08-12 «A unique code assigned to Merchant. Varchar(20).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_MerchantId()
 	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
 	 */
-	protected function k_MerchantId() {return 'merchantid';}
+	protected function k_MerchantId():string {return 'merchantid';}
 
 	/**
 	 * 2017-08-12 «A unique id identifying this specific transaction from the merchant side. Varchar(40).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_RequestId()
 	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
 	 */
-	protected function k_RequestId() {return 'txnid';}
+	protected function k_RequestId():string {return 'txnid';}
 
 	/**
 	 * 2017-08-12 «A sha1 checksum digest of all the parameters along with the secret key. Char(40).»
 	 * @override
 	 * @see \Df\PaypalClone\Charge::k_Signature()
 	 * @used-by \Df\PaypalClone\Charge::p()
-	 * @return string
 	 */
-	protected function k_Signature() {return 'digest';}
+	protected function k_Signature():string {return 'digest';}
 
 	/**
 	 * 2017-08-12
@@ -69,7 +63,7 @@ final class Charge extends \Df\PaypalClone\Charge {
 	 * @used-by \Df\PaypalClone\Charge::p()
 	 * @return array(string => mixed)
 	 */
-	protected function pCharge() {return [
+	protected function pCharge():array {return [
 		/**
 		 * 2017-08-12
 		 * Note 1: «A brief description of what the payment is for. Varchar(128).»

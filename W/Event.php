@@ -13,9 +13,8 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::isSuccessful()
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
-	 * @return bool
 	 */
-	function isSuccessful() {return 'F' !== $this->status();}
+	function isSuccessful():bool {return 'F' !== $this->status();}
 
 	/**
 	 * 2017-08-16 The type of the current transaction.
@@ -32,34 +31,31 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * @used-by \Df\Payment\W\Strategy\ConfirmPending::_handle()
 	 * @used-by \Df\PaypalClone\W\Nav::id()
 	 */
-	function ttCurrent() {return 'S' === $this->status() ? self::T_CAPTURE : self::T_INFO;}
+	function ttCurrent():string {return 'S' === $this->status() ? self::T_CAPTURE : self::T_INFO;}
 
 	/**
 	 * 2017-08-14 «A common reference number identifying this specific transaction from the PS side»
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_idE()
 	 * @used-by \Df\PaypalClone\W\Event::idE()
-	 * @return string
 	 */
-	protected function k_idE() {return 'refno';}
+	protected function k_idE():string {return 'refno';}
 
 	/**
 	 * 2017-08-14 «A unique id identifying this specific transaction from the merchant side»
 	 * @override
 	 * @see \Df\Payment\W\Event::k_pid()
 	 * @used-by \Df\Payment\W\Event::pid()
-	 * @return string
 	 */
-	protected function k_pid() {return 'txnid';}
+	protected function k_pid():string {return 'txnid';}
 
 	/**
 	 * 2017-08-14 «A sha1 checksum digest of the parameters along with the secret key»
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_signature()
 	 * @used-by \Df\PaypalClone\W\Event::signatureProvided()
-	 * @return string
 	 */
-	protected function k_signature() {return 'digest';}
+	protected function k_signature():string {return 'digest';}
 
 	/**
 	 * 2017-08-14
@@ -91,9 +87,8 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_status()
 	 * @used-by \Df\PaypalClone\W\Event::status()
-	 * @return string
 	 */
-	protected function k_status() {return 'status';}
+	protected function k_status():string {return 'status';}
 
 	/**
 	 * 2017-08-14
@@ -103,7 +98,6 @@ final class Event extends \Df\PaypalClone\W\Event {
 	 * @override
 	 * @see \Df\PaypalClone\W\Event::k_statusT()
 	 * @used-by \Df\PaypalClone\W\Event::statusT()
-	 * @return string|null
 	 */
-	protected function k_statusT() {return 'message';}
+	protected function k_statusT():string {return 'message';}
 }

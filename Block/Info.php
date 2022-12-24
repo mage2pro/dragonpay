@@ -11,7 +11,7 @@ class Info extends \Df\Payment\Block\Info {
 	 * @used-by self::prepareUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
-	final protected function prepare() {
+	final protected function prepare():void {
 		/**
 		 * 2019-07-05
 		 * 1) "Show the `refno` value on the backend order screen for paid orders":
@@ -36,7 +36,7 @@ class Info extends \Df\Payment\Block\Info {
 	 * @see \Df\Payment\Block\Info::prepareUnconfirmed()
 	 * @used-by \Df\Payment\Block\Info::prepareToRendering()
 	 */
-	final protected function prepareUnconfirmed() {
+	final protected function prepareUnconfirmed():void {
 		$this->prepare();
 		parent::prepareUnconfirmed();
 	}

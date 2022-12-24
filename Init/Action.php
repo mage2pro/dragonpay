@@ -11,7 +11,7 @@ final class Action extends \Df\PaypalClone\Init\Action {
 	 * @see \Dfe\Qiwi\Init\Action::redirectMethod()
 	 * @return bool
 	 */
-	protected function forceGet() {return true;}
+	protected function forceGet():bool {return true;}
 
 	/**
 	 * 2017-04-11
@@ -21,9 +21,8 @@ final class Action extends \Df\PaypalClone\Init\Action {
 	 * @override
 	 * @see \Df\Payment\Init\Action::redirectUrl()
 	 * @used-by \Df\Payment\Init\Action::action()
-	 * @return string
 	 */
-	protected function redirectUrl() {
+	protected function redirectUrl():string {
 		/** @var string $protocol */ /** @var string $subdomain */
 		list($protocol, $subdomain) = $this->m()->test(['http', 'test'], ['https', 'gw']);
 		return "$protocol://$subdomain.dragonpay.ph/Pay.aspx";
