@@ -9,7 +9,6 @@ final class Action extends \Df\PaypalClone\Init\Action {
 	 * @see \Df\Payment\Init\Action::forceGet
 	 * @used-by \Df\Payment\Init\Action::action()
 	 * @see \Dfe\Qiwi\Init\Action::redirectMethod()
-	 * @return bool
 	 */
 	protected function forceGet():bool {return true;}
 
